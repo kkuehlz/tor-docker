@@ -12,6 +12,8 @@
 ## Tor will look for this file in various places based on your platform:
 ## https://www.torproject.org/docs/faq#torrc
 
+PidFile /run/tor/tor.pid
+
 ControlSocket /run/tor/control
 ControlSocketsGroupWritable 1
 CookieAuthentication 1
@@ -57,7 +59,7 @@ RunAsDaemon 1
 
 ## The directory for keeping all the keys/etc. By default, we store
 ## things in $HOME/.tor on Unix, and in Application Data\tor on Windows.
-#DataDirectory /var/lib/tor
+DataDirectory /data/tor
 
 ## The port on which Tor will listen for local connections from Tor
 ## controller applications, as documented in control-spec.txt.
@@ -228,7 +230,7 @@ ExitPolicy reject 192.168.0.0/16:*
 ExitPolicy reject 10.0.0.0/8:*
 ExitPolicy reject 172.16.0.0/12:*
 ExitPolicy reject 198.58.107.53:*
-# Disable IPs that complained 
+# Disable IPs that complained
 ExitPolicy reject 195.78.229.170:*
 ExitPolicy reject 5.145.172.182:*
 ExitPolicy reject6 [2a00:1d70:c01c::172:182]:*
@@ -241,7 +243,7 @@ ExitPolicy accept *:53 # DNS
 ExitPolicy accept *:993 # IMAPS
 ExitPolicy accept *:994 # IRCS
 ExitPolicy accept *:995 # POP3S
-ExitPolicy accept *:5222-5223 # XMPPS 
+ExitPolicy accept *:5222-5223 # XMPPS
 ExitPolicy accept *:6660-6697 # IRC
 ExitPolicy accept *:443 # HTTPS
 ExitPolicy accept *:80 # use HTTPS, nub
