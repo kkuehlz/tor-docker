@@ -1,0 +1,19 @@
+Hi <requester>,
+
+1) The source of the issue was not, as affected party claims, a compromise. My server is part of the Tor Anonymity Network, which is dedicated to providing people with anonymity who need it most: average computer users. 
+
+This server IP should be generating no other traffic. While Tor is not designed for malicious computer users, it is inevitable that some may use the network for malicious ends. In the mind of this operator, the social need for easily accessible censorship-resistant anonymous communication trumps the risk. Tor sees use by many important segments of the population, including whistle blowers, journalists, Chinese dissidents skirting the Great Firewall and oppressive censorship, abuse victims, stalker targets, the US military, and law enforcement, just to name a few.
+
+2) I’ve updated my /etc/tor/torrc to include all ports on the destination IP:
+
+ExitPolicy reject 195.78.229.170:*
+ExitPolicy reject6 [2a00:1d70:c01c::172:182]:*
+
+I’ve also restarted the tor service. The destination IP should no longer receive any traffic from this machine.
+
+3) Unfortunately I cannot prevent this from happening again, as inevitably people will use Tor for malicious activity. I will act on future reports swiftly.
+
+The reverse dns for my server is also tor.keur.rocks. Many people will check this reverse dns and, upon realizing it is a tor node, forgo sending in an abuse ticket.
+
+Best,
+Kevin
